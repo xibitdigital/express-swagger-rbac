@@ -1,6 +1,6 @@
 {
-  "name": "boilerplate-node-lib",
-  "version": "1.1.0",
+  "name": "express-swagger-rbac",
+  "version": "1.0.0",
   "description": "Boilerplate for node libs",
   "main": "src/index.js",
   "scripts": {
@@ -10,25 +10,29 @@
     "precommit": "pretty-quick --staged"
   },
   "keywords": [
-    "boilerplate"
+    "express",
+    "swagger",
+    "rbac"
   ],
   "author": "daniele@xibitdigital.com",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/xibitdigital/boilerplate-node-lib"
+    "url": "https://github.com/xibitdigital/express-swagger-rbac"
   },
   "bugs": {
-    "url": "https://github.com/xibitdigital/boilerplate-node-lib/issues"
+    "url": "https://github.com/xibitdigital/express-swagger-rbac/issues"
   },
   "devDependencies": {
     "@babel/core": "^7.0.0-beta.46",
     "@babel/preset-env": "^7.0.0-beta.46",
     "babel-core": "^7.0.0-bridge.0",
     "babel-polyfill": "^6.26.0",
+    "express": "^4.16.4",
     "jest": "^23.5.0",
     "prettier": "^1.14.0",
-    "pretty-quick": "^1.6.0"
+    "pretty-quick": "^1.6.0",
+    "supertest": "^3.4.2"
   },
   "engines": {
     "node": ">=10.6.0"
@@ -36,6 +40,11 @@
   "jest": {
     "testURL": "http://localhost/",
     "rootDir": ".",
-    "coveragePathIgnorePatterns": []
+    "coveragePathIgnorePatterns": [
+      "node_modules"
+    ]
+  },
+  "dependencies": {
+    "ramda": "^0.26.1"
   }
 }
