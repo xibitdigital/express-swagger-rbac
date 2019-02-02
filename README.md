@@ -1,2 +1,3 @@
-# boilerplate-node-lib
-Boilerplate to quickly get started building Nodejs libs
+# swagger rbac middleware
+
+Simple middleware with RBAC on JSON swagger document
