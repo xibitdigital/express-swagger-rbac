@@ -1,5 +1,5 @@
 # Swagger RBAC middleware
-[![Known Vulnerabilities](https://snyk.io/test/github/xibitdigital/express-swagger-rbac/badge.svg?targetFile=package.json)](https://snyk.io/test/github/xibitdigital/express-swagger-rbac?targetFile=package.json)
+[![Build Status](https://travis-ci.com/xibitdigital/express-swagger-rbac.svg?branch=master)](https://travis-ci.com/xibitdigital/express-swagger-rbac)[![Known Vulnerabilities](https://snyk.io/test/github/xibitdigital/express-swagger-rbac/badge.svg?targetFile=package.json)](https://snyk.io/test/github/xibitdigital/express-swagger-rbac?targetFile=package.json)
 
 Simple middleware with RBAC on JSON swagger document
 
