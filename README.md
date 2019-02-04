@@ -95,3 +95,4 @@ const response = await request(app)
 ```
 
 For all the endpoints that have no rbac defined the middleware will make the request got through.
+Please check the tests for more examples.
