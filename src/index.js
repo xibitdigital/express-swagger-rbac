@@ -19,12 +19,12 @@ const swaggerDocToConf = swaggerConf => ({
 
 const isAllowed = (config, req) => {
   const noun = config.basePath ? req.path.split(config.basePath)[1] : req.path;
-  const matchedRoles = R.compose(
+  const matchedRoutes = R.compose(
     R.prop("rbac"),
     R.head,
     R.filter(x => noun.indexOf(x.route) > -1)
-  )(config.routes); //?
-  return R.isEmpty(matchedRoles) || (matchedRoles && R.intersection(matchedRoles, req.groups).length > 0)
+  )(config.routes);
+  return R.isEmpty(matchedRoutes) || (matchedRoutes && R.intersection(matchedRoutes, req.groups).length > 0)
     ? true
     : false;
 };
