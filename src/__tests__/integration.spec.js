@@ -55,17 +55,14 @@ describe("permitMiddleware", () => {
       next();
     });
 
-    const response = await request(app)
+    await request(app)
       .get("/v1/testfoo/1/1")
-      .expect(403)
-      .end((err, res) => {
-        if (err) throw err;
-      });
+      .expect(403);
   });
 
   it("should return 200 if access group is not present", async () => {
     app.use((req, res, next) => {
-      req.groups = ["group2"]; //?
+      req.groups = ["group2"];
       next();
     });
     app.use(permitMiddleware(config));
@@ -74,12 +71,9 @@ describe("permitMiddleware", () => {
       res.sendStatus(200);
     });
 
-    const response = await request(app)
+    await request(app)
       .get("/v1/testfoobar/1")
-      .expect(200)
-      .end((err, res) => {
-        if (err) throw err;
-      });
+      .expect(200);
   });
 
   it("should return 200 if access group does match", async () => {
@@ -94,11 +88,8 @@ describe("permitMiddleware", () => {
       next();
     });
 
-    const response = await request(app)
+    await request(app)
       .get("/v1/testfoo/1/1")
-      .expect(200)
-      .end((err, res) => {
-        if (err) throw err;
-      });
+      .expect(200);
   });
 });
