@@ -6,7 +6,7 @@ const swaggerDocToRoutes = R.compose(
   R.uniq,
   R.map(a => ({
     route: a[0].split(":")[0],
-    rbac: a[1].rbac ? a[1].rbac : null
+    rbac: a[1].rbac ? a[1].rbac : []
   })),
   R.toPairs,
   R.prop("paths")
@@ -23,8 +23,8 @@ const isAllowed = (config, req) => {
     R.prop("rbac"),
     R.head,
     R.filter(x => noun.indexOf(x.route) > -1)
-  )(config.routes);
-  return matchedRoles === null || (matchedRoles && R.intersection(matchedRoles, req.groups).length > 0)
+  )(config.routes); //?
+  return R.isEmpty(matchedRoles) || (matchedRoles && R.intersection(matchedRoles, req.groups).length > 0)
     ? true
     : false;
 };
