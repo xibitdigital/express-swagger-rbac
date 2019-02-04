@@ -41,7 +41,7 @@ const expectedDoc = {
     },
     {
       route: "/testfoobar",
-      rbac: null
+      rbac: []
     }
   ]
 };

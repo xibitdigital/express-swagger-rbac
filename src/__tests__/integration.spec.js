@@ -63,7 +63,7 @@ describe("permitMiddleware", () => {
       });
   });
 
-  it("should return 403 if access group is not present", async () => {
+  it("should return 200 if access group is not present", async () => {
     app.use((req, res, next) => {
       req.groups = ["group2"]; //?
       next();
