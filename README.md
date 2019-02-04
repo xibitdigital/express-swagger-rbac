@@ -1,4 +1,5 @@
 # Swagger RBAC middleware
+
 [![Build Status](https://travis-ci.com/xibitdigital/express-swagger-rbac.svg?branch=master)](https://travis-ci.com/xibitdigital/express-swagger-rbac)[![Known Vulnerabilities](https://snyk.io/test/github/xibitdigital/express-swagger-rbac/badge.svg?targetFile=package.json)](https://snyk.io/test/github/xibitdigital/express-swagger-rbac?targetFile=package.json)
 
 Simple middleware with RBAC on JSON swagger document
@@ -73,16 +74,16 @@ const swaggerDoc = {
 const config = swaggerDocToConf(swaggerDoc);
 
 app.use((req, res, next) => {
- req.groups = ["group1"];// adding groups to req
- next();
+  req.groups = ["group1"]; // adding groups to req
+  next();
 });
 
 // setting middleware
 app.use(permitMiddleware(config));
 
 app.get("/v1/testfoo/:foo/:foo", (req, res, next) => {
- res.sendStatus(200);
- next();
+  res.sendStatus(200);
+  next();
 });
 
 const response = await request(app)
@@ -93,10 +94,4 @@ const response = await request(app)
   });
 ```
 
-
-
-
-
-
-
-
+For all the endpoints that have no rbac defined the middleware will make the request got through.
