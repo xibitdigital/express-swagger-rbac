@@ -7,7 +7,7 @@
     "test": "jest --coverage",
     "test-watch": "jest --watch",
     "precommit": "pretty-quick --staged",
-    "commit": "git-cz",
+    "commit": "npx git-cz",
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once"
   },
@@ -53,7 +53,9 @@
   "dependencies": {
     "ramda": "^0.26.1"
   },
-  "czConfig": {
-    "path": "node_modules/cz-conventional-changelog"
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
