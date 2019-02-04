@@ -1,6 +1,6 @@
 {
   "name": "express-swagger-rbac",
-  "version": "1.0.2",
+  "version": "0.0.0-semantically-released",
   "description": "Express Swagger RBAC",
   "main": "src/index.js",
   "scripts": {
@@ -8,7 +8,8 @@
     "test": "jest --coverage",
     "test-watch": "jest --watch",
     "precommit": "pretty-quick --staged",
-    "semantic-release": "semantic-release"
+    "commit": "git-cz",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "keywords": [
     "express",
@@ -29,6 +30,8 @@
     "@babel/preset-env": "^7.0.0-beta.46",
     "babel-core": "^7.0.0-bridge.0",
     "babel-polyfill": "^6.26.0",
+    "commitizen": "^3.0.5",
+    "cz-conventional-changelog": "^2.1.0",
     "express": "^4.16.4",
     "jest": "^23.5.0",
     "prettier": "^1.14.0",
@@ -48,5 +51,8 @@
   },
   "dependencies": {
     "ramda": "^0.26.1"
+  },
+  "czConfig": {
+    "path": "node_modules/cz-conventional-changelog"
   }
 }
