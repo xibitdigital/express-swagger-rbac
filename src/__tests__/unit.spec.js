@@ -22,7 +22,7 @@ const swaggerDoc = {
       },
       rbac: ["group1"]
     },
-    "/testfoobar/": {
+    "/testfoobar": {
       post: {
         "x-swagger-router-controller": "foobar",
         operationId: "foobarController",
@@ -40,7 +40,7 @@ const expectedDoc = {
       rbac: ["group1"]
     },
     {
-      route: "/testfoobar/",
+      route: "/testfoobar",
       rbac: null
     }
   ]
@@ -61,7 +61,17 @@ describe("RBAC module", () => {
         path: "/v1/testfoo/1/1",
         groups: ["group1"]
       };
-      const actualResult = isAllowed(expectedDoc, req); //?
+      const actualResult = isAllowed(expectedDoc, req);
+
+      expect(actualResult).toEqual(true);
+    });
+
+    it("should return true if no rbac is defined", async () => {
+      const req = {
+        path: "/v1/testfoobar",
+        groups: ["group10"]
+      };
+      const actualResult = isAllowed(expectedDoc, req);
 
       expect(actualResult).toEqual(true);
     });

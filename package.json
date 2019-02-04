@@ -1,13 +1,14 @@
 {
   "name": "express-swagger-rbac",
-  "version": "1.0.0",
-  "description": "Boilerplate for node libs",
+  "version": "1.0.1",
+  "description": "Express Swagger RBAC",
   "main": "src/index.js",
   "scripts": {
     "start": "node index",
     "test": "jest --coverage",
     "test-watch": "jest --watch",
-    "precommit": "pretty-quick --staged"
+    "precommit": "pretty-quick --staged",
+    "semantic-release": "semantic-release"
   },
   "keywords": [
     "express",
@@ -32,6 +33,7 @@
     "jest": "^23.5.0",
     "prettier": "^1.14.0",
     "pretty-quick": "^1.6.0",
+    "semantic-release": "^15.13.3",
     "supertest": "^3.4.2"
   },
   "engines": {

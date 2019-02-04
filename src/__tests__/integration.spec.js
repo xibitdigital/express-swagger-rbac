@@ -76,7 +76,7 @@ describe("permitMiddleware", () => {
 
     const response = await request(app)
       .get("/v1/testfoobar/1")
-      .expect(403)
+      .expect(200)
       .end((err, res) => {
         if (err) throw err;
       });
