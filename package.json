@@ -1,6 +1,6 @@
 {
   "name": "express-swagger-rbac",
-  "version": "0.0.0-semantically-released",
+  "version": "0.0.0-development",
   "description": "Express Swagger RBAC",
   "main": "src/index.js",
   "scripts": {
@@ -9,7 +9,8 @@
     "test-watch": "jest --watch",
     "precommit": "pretty-quick --staged",
     "commit": "git-cz",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once"
   },
   "keywords": [
     "express",
@@ -37,7 +38,8 @@
     "prettier": "^1.14.0",
     "pretty-quick": "^1.6.0",
     "semantic-release": "^15.13.3",
-    "supertest": "^3.4.2"
+    "supertest": "^3.4.2",
+    "travis-deploy-once": "^5.0.11"
   },
   "engines": {
     "node": ">=10.6.0"
