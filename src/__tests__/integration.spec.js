@@ -92,4 +92,21 @@ describe("permitMiddleware", () => {
       .get("/v1/testfoo/1/1")
       .expect(200);
   });
+
+  it("should return 200 for a route defined outside the json document", async () => {
+    app.use((req, res, next) => {
+      req.groups = ["group1"];
+      next();
+    });
+    app.use(permitMiddleware(config));
+
+    app.get("/v1/healtz", (req, res, next) => {
+      res.sendStatus(200);
+      next();
+    });
+
+    await request(app)
+      .get("/v1/healtz")
+      .expect(200);
+  });
 });

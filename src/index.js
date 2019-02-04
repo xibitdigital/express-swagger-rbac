@@ -24,7 +24,10 @@ const isAllowed = (config, req) => {
     R.head,
     R.filter(x => noun.indexOf(x.route) > -1)
   )(config.routes);
-  return R.isEmpty(matchedRoutes) || (matchedRoutes && R.intersection(matchedRoutes, req.groups).length > 0)
+
+  return matchedRoutes === undefined ||
+    R.isEmpty(matchedRoutes) ||
+    (matchedRoutes && R.intersection(matchedRoutes, req.groups).length > 0)
     ? true
     : false;
 };
