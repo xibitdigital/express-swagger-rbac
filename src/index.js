@@ -24,8 +24,9 @@ const isAllowed = (config, req) => {
     R.head,
     R.filter(x => noun.indexOf(x.route) > -1)
   )(config.routes);
-
-  return matchedRoles && R.intersection(matchedRoles, req.groups).length > 0 ? true : false;
+  return matchedRoles === null || (matchedRoles && R.intersection(matchedRoles, req.groups).length > 0)
+    ? true
+    : false;
 };
 
 const permitMiddleware = config => {
