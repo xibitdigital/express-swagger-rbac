@@ -4,7 +4,6 @@
   "description": "Express Swagger RBAC",
   "main": "src/index.js",
   "scripts": {
-    "start": "node index",
     "test": "jest --coverage",
     "test-watch": "jest --watch",
     "precommit": "pretty-quick --staged",
