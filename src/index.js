@@ -6,7 +6,7 @@ const swaggerDocToRoutes = R.compose(
   R.uniq,
   R.map(a => ({
     route: a[0].split(":")[0],
-    rbac: a[1].rbac ? a[1].rbac : []
+    rbac: R.toPairs(a[1])[0][1].rbac ? R.toPairs(a[1])[0][1].rbac : []
   })),
   R.toPairs,
   R.prop("paths")
