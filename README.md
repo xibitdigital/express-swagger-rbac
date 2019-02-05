@@ -13,17 +13,17 @@ Simple middleware with RBAC on JSON swagger document
   paths: {
     "/testfoo/:type/:id": {
       get: {
-        tags: ["/foo"]
-      },
-      rbac: ["group1"]
+        tags: ["/foo"],
+        rbac: ["group1"]
+      }
     },
     "/testfoo/:foo/:foo/:foo": {
       get: {
         "x-swagger-router-controller": "foo",
         operationId: "fooControllerWithPage",
-        tags: ["/foo"]
-      },
-      rbac: ["group1"]
+        tags: ["/foo"],
+        rbac: ["group1"]
+      }
     },
     "/testfoobar/:foo": {
       get: {
@@ -49,17 +49,17 @@ const swaggerDoc = {
   paths: {
     "/testfoo/:type/:id": {
       get: {
-        tags: ["/foo"]
-      },
-      rbac: ["group1"]
+        tags: ["/foo"],
+        rbac: ["group1"]
+      }
     },
     "/testfoo/:foo/:foo/:foo": {
       get: {
         "x-swagger-router-controller": "foo",
         operationId: "fooControllerWithPage",
-        tags: ["/foo"]
-      },
-      rbac: ["group1"]
+        tags: ["/foo"],
+        rbac: ["group1"]
+      }
     },
     "/testfoobar/:foo": {
       get: {
