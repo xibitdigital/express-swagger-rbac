@@ -46,6 +46,20 @@ const expectedDoc = {
   ]
 };
 
+const expectedDocMultiGroup = {
+  basePath: "/v1",
+  routes: [
+    {
+      route: "/testfoo/",
+      rbac: ["group1", "group2"]
+    },
+    {
+      route: "/testfoobar",
+      rbac: []
+    }
+  ]
+};
+
 describe("RBAC module", () => {
   describe("swaggerDocToConf", () => {
     it("should return an object to handle RBAC checks", async () => {
@@ -72,6 +86,16 @@ describe("RBAC module", () => {
         groups: ["group10"]
       };
       const actualResult = isAllowed(expectedDoc, req);
+
+      expect(actualResult).toEqual(true);
+    });
+
+    it("should return true if the group and route are matching the routes configuration", async () => {
+      const req = {
+        path: "/v1/testfoo/1/1",
+        groups: ["group2", "group3"]
+      };
+      const actualResult = isAllowed(expectedDocMultiGroup, req);
 
       expect(actualResult).toEqual(true);
     });
